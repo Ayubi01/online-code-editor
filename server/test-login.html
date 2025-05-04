@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Signup Test</title>
+  <title>Login Test</title>
 </head>
 <body>
-  <h2>Test Signup API</h2>
-  <form id="signupForm">
+  <h2>Test Login API</h2>
+  <form id="loginForm">
     <label>Username: <input type="text" id="username" required></label><br><br>
     <label>Password: <input type="password" id="password" required></label><br><br>
-    <button type="submit">Sign Up</button>
+    <button type="submit">Log In</button>
   </form>
 
   <p id="response"></p>
 
   <script>
-    const form = document.getElementById("signupForm");
+    const form = document.getElementById("loginForm");
     const responseEl = document.getElementById("response");
 
     form.addEventListener("submit", async (e) => {
@@ -26,7 +26,7 @@
       const password = document.getElementById("password").value;
 
       try {
-        const res = await fetch("/api/auth/signup", {
+        const res = await fetch("/api/auth/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ username, password })
@@ -41,4 +41,3 @@
   </script>
 </body>
 </html>
-
